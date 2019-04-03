@@ -1,26 +1,29 @@
 // business logic
 var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-var userInput = $("#sentence").val();
-
-console.log(userInput);
-
-console.log(sentence);
-var pigLatin = function(sentence) {
-  // userInput = userInput.slice("");
-if (userInput != vowels) {
-  // userInput = userInput.unshift();
-  sentence = sentence + "ay";
-}else {
+function pigLatin(userInput) {
+  var userArray = userInput.split('');
+  if (vowels.includes(userInput)) {
+    userInput = userInput + "ay";
+  }else {
   return false;
-  }
+  }// for(var i = 0; i < userArray.lenth; i++ ){
+  // }
+  return userInput;
 };
+// function someFunction(userInput){
+console.log("Hi");
+//
+//
+//
+//   return something;
+// }
 
-// user interface logic
+//user interface logic
 $(document).ready(function() {
   $("form#user").submit(function(event) {
     event.preventDefault();
-    var sentence = $("input#sentence").val();
-    var result = pigLatin(sentence);
+    var userInput = $("input#sentence").val();
+    var result = pigLatin(userInput);
     $("#result").text(result);
 
     $("#result").show();
