@@ -20,10 +20,13 @@ Pig Latin translator. igPay atinLay anslatorTray.
 
 
 ## Specs
-|Specs Behavior                                                     |Input      |Output      |
-|-------------------------------------------------------------------|-----------|------------|
-|For words beginning with a vowel, add "way" to the end.            | apple     | ppleaway   |  
-|For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".                                                       |stay           | aystay           |
+|Specs Behavior|Input|Output|
+|-|-|-|
+|Does nothing to non-alphabetical characters| $3| $3|
+|adds "ay" to the end of single character words beginning with a vowel | I | Iay |
+|For words beginning with a vowel, add "way" to the end.            | apple     | appleway   |
+|For words beginning with one consonant add "ay" to the end| say| aysay|
+|For words beginning with multiple consonants, move all of the first consecutive consonants to the end, and add "ay".                                                       |stay           | aystay           |
 |If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!                             | quill     |  illquay   |
 |For words beginning with "y", treat "y" as a consonant.            |yell       |ellyay      |
 
