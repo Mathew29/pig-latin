@@ -2,7 +2,9 @@
 var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 function pigLatin(userInput) {
   var userArray = userInput.split('');
-  if (vowels.includes(userInput)) {
+  if (vowels.includes(userInput) || userInput.length > 2){
+    userInput = userInput + "way";
+  } else if (vowels.includes(userInput)) {
     userInput = userInput + "ay";
   }else {
   return false;
